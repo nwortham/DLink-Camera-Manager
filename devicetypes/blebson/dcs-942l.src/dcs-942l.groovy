@@ -599,8 +599,11 @@ def refresh(){
 def start() {
 	log.trace "start()"
 	def dataLiveVideo = [
-		OutHomeURL  : "rtsp://${state.cameraUser}:${state.cameraPassword}@${state.videoIP}:${state.videoPort}/play1.sdp",
-		InHomeURL   : "rtsp://${state.cameraUser}:${state.cameraPassword}@${state.videoIP}:${state.videoPort}/play1.sdp",
+		//OutHomeURL  : "rtsp://${state.cameraUser}:${state.cameraPassword}@${state.videoIP}:${state.videoPort}/play1.sdp",
+		//InHomeURL   : "rtsp://${state.cameraUser}:${state.cameraPassword}@${state.videoIP}:${state.videoPort}/play1.sdp",
+		//naw change:  DCS-942L - http://IPADDRESS:PORT_NUMBER/video/mjpg.cgi
+		OutHomeURL  : "http://${state.cameraUser}:${state.cameraPassword}@${state.videoIP}:${state.videoPort}/video/mjpg.cgi",
+		InHomeURL   : "http://${state.cameraUser}:${state.cameraPassword}@${state.videoIP}:${state.videoPort}/video/mjpg.cgi",
 		ThumbnailURL: "http://cdn.device-icons.smartthings.com/camera/dlink-indoor@2x.png",
 		cookie      : [key: "key", value: "value"]
 	]
